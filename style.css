@@ -1,6 +1,70 @@
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+body {
+	display: grid;
+	grid-area: nav;
+	grid-area: main;
+	grid-area: footer;
+	grid-template-areas: "nav main main main"
+						 "footer footer footer footer";
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+}
+
+h5, h6 {
+	font-size: 1rem;
+}
+
+header {
+	padding: 10%;
+	background-color: gray;
+	height: 100vh;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.15em;
+}
+
+main {
+	padding: 10%;
+	grid-template-columns: 3fr;
+}
+
+section {
+	display: inherit;
+	grid-area: h3;
+	grid-area: .flat-color;
+	grid-area: .light;
+	grid-area: .medium;
+	grid-area: .dark;
+	grid-template-areas: "h3 .flat-color .flat-color .flat-color"
+	                     "h3 .light .medium .dark";
+}
+
+footer {
+	display: grid;
+	grid-template-columns: 1fr;
+	width: 100%;
 }
