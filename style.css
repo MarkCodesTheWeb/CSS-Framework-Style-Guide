@@ -6,15 +6,6 @@ html {
   box-sizing: inherit;
 }
 
-body {
-	display: grid;
-	grid-area: nav;
-	grid-area: main;
-	grid-area: footer;
-	grid-template-areas: "nav main main main"
-						 "footer footer footer footer";
-}
-
 h1 {
 	font-size: 2rem;
 }
@@ -35,36 +26,155 @@ h5, h6 {
 	font-size: 1rem;
 }
 
+body {
+	display: grid;
+  grid-template-columns: 200px repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "header main main main"
+                       "footer footer footer footer";
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 2%;
+}
+
 header {
+  grid-area: header;
 	padding: 10%;
 	background-color: gray;
-	height: 100vh;
+}
+
+nav {
+  align-items: center;
+}
+
+nav li {
+  padding-top: .85em;
 }
 
 nav a {
 	color: white;
 	text-decoration: none;
 	font-size: 1.15em;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: lightgray;
+}
+
+nav a:active {
+  color: lightblue;
 }
 
 main {
-	padding: 10%;
-	grid-template-columns: 3fr;
+  grid-area: main;
+	padding: 5%;
 }
 
-section {
-	display: inherit;
-	grid-area: h3;
-	grid-area: .flat-color;
-	grid-area: .light;
-	grid-area: .medium;
-	grid-area: .dark;
-	grid-template-areas: "h3 .flat-color .flat-color .flat-color"
-	                     "h3 .light .medium .dark";
+.color-heading {
+  grid-area: color-h3;
 }
 
-footer {
-	display: grid;
-	grid-template-columns: 1fr;
-	width: 100%;
+.flat-color {
+  grid-area: flat-color;
+  width: 100%;
+}
+
+.light {
+  grid-area: light;
+  opacity: 25%;
+}
+
+.medium {
+  grid-area: medium;
+}
+
+.dark {
+  grid-area: dark;
+}
+
+.color-section {
+  display: grid;
+  grid-template-areas: "color-h3 color-h3 color-h3"
+                       "flat-color flat-color flat-color"
+                       "light medium dark";
+  text-align: center;
+  margin-top: 5%;
+}
+
+.color-section p {
+  display: flex;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.primary > .flat-color {
+  background-color: hsl(209, 48%, 52%);
+}
+
+.primary > .light {
+  background-color: hsl(209, 48%, 52%, 25%);
+}
+
+.primary > .medium {
+  background-color: hsl(209, 48%, 52%, 50%);
+}
+
+.primary > .dark {
+  background-color: hsl(209, 48%, 52%, 75%);
+}
+
+.secondary > .flat-color {
+  background-color: hsl(27, 48%, 52%);
+}
+
+.secondary > .light {
+  background-color: hsl(27, 48%, 52%, 25%);
+}
+
+.secondary > .medium {
+  background-color: hsl(27, 48%, 52%, 50%);
+}
+
+.secondary > .dark {
+  background-color: hsl(27, 48%, 52%, 75%);
+}
+
+.accent > .flat-color {
+  background-color: hsl(705, 48%, 52%);
+}
+
+.accent > .light {
+  background-color: hsl(705, 48%, 52%, 25%);
+}
+
+.accent > .medium {
+  background-color: hsl(705, 48%, 52%, 50%);
+}
+
+.accent > .dark {
+  background-color: hsl(705, 48%, 52%, 75%);
+}
+
+.greytones > .flat-color {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.greytones > .light {
+  background-color: hsl(0, 0%, 0%, 25%);
+}
+
+.greytones > .medium {
+  background-color: hsl(0, 0%, 0%, 50%);
+}
+
+.greytones > .dark {
+  background-color: hsl(0, 0%, 0%, 75%);
 }
